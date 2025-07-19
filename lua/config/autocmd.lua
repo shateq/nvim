@@ -8,18 +8,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Set local settings for terminal buffers
 vim.api.nvim_create_autocmd("TermOpen", {
-  group = vim.api.nvim_create_augroup("custom-term-open", {}),
+  group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
   callback = function()
-    set.number = false
-    set.relativenumber = false
-    set.scrolloff = 0
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+    vim.opt.scrolloff = 0
 
-    vim.bo.filetype = "terminal"
+    --vim.bo.filetype = "terminal"
   end,
 })
-
--- Easily hit escape in terminal mode.
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- disable automatic comment on newline
 vim.api.nvim_create_autocmd("FileType", {
