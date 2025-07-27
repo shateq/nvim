@@ -1,33 +1,43 @@
 --  [[ my minimal config --]]
 vim.g.mapleader = ","
---vim.g.maplocalleader = ","
+local o = vim.o
 
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+o.guicursor = "" -- i desperately need this one
+o.clipboard = "unnamedplus" --system clipboard
+o.history = 100
+o.nu = true
+o.relativenumber = true
+o.wrap = true
 
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system {
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  }
-end
+o.tabstop = 4
+o.shiftwidth = 4
+o.smarttab = true
+o.smartindent = true
 
--- Add lazy to the `runtimepath`, this allows us to `require` it.
----@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
+o.scrolloff = 4 -- this is VERY cool
+o.sidescrolloff = 4
+o.signcolumn = "yes"
+o.splitright = true
+o.termguicolors = true
 
--- Setup lazy.nvim
-require("lazy").setup {
-  spec = "plugins",
-  install = { colorscheme = { "catppuccin-mocha" } },
-  checker = { enabled = false },
-  change_detection = { notify = false },
-}
+o.lazyredraw = true
+o.synmaxcol = 300
+o.timeoutlen = 500
+o.cursorline = true --highlight line
+o.showmode = false --uncomment if there is a statusbar
 
-require "config"
+-- Undo file
+o.undofile = true
+o.undodir = os.getenv "XDG_CACHE_HOME" .. "/vim/undodir"
+o.backup = false
+o.swapfile = false
+o.updatetime = 300 -- swap file related
+-- Search
+o.inccommand = "split"
+o.ignorecase = true
+o.smartcase = true
+
+require "config.lazy"
 require "config.keymap"
 require "config.autocmd"
+
