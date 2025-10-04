@@ -3,7 +3,7 @@ local function map(m, k, v)
   vim.keymap.set(m, k, v, { noremap = true, silent = true })
 end
 
-map("n", "<leader>g", "vi<ywa</>PT>")
+map("n", "<leader>g", "vi<yf>a</>PT>i")
 map("n", "<leader>h", "<cmd>noh<CR>")
 map("n", "<leader>f", ":find ") -- execute current file
 map("n", "<leader>s", ":%s/foo/bar/g<Left><Left>") --replace all
