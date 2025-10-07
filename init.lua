@@ -3,7 +3,7 @@ vim.g.mapleader = ","
 local o = vim.o
 
 o.guicursor = "" -- i desperately need this one
-o.clipboard = "unnamedplus" --system clipboard
+o.clipboard = "unnamedplus" -- system clipboard
 o.history = 100
 o.nu = true
 o.relativenumber = true
@@ -11,10 +11,11 @@ o.wrap = true
 
 o.tabstop = 4
 o.shiftwidth = 4
+o.expandtab = true -- VERY important pls
 o.smarttab = true
 o.smartindent = true
 
-o.scrolloff = 4 -- this is VERY cool
+o.scrolloff = 4
 o.sidescrolloff = 4
 o.signcolumn = "yes"
 o.splitright = true
@@ -23,9 +24,8 @@ o.termguicolors = true
 o.lazyredraw = true
 o.synmaxcol = 300
 o.timeoutlen = 500
-o.cursorline = true --highlight line
-o.showmode = false --uncomment if there is a statusbar
-
+o.cursorline = true -- highlight line
+o.showmode = false -- false if there's status bar 
 -- Undo file
 o.undofile = true
 o.undodir = os.getenv "XDG_CACHE_HOME" .. "/vim/undodir"

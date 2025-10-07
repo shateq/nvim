@@ -9,4 +9,7 @@ return {
       show_hidden = true,
     },
   },
+  keys = {
+    { "<leader>pv", "<cmd>Oil<CR>", desc = "Open parent directory" },
+  },
 }

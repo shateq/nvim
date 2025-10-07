@@ -9,13 +9,13 @@ return {
       },
       {
         name = "local",
-        path = vim.fn.expand("$HOME/Documents/Wiki"),
+        path = "~/Documents/Wiki",
       },
     },
     keys = {
-      { "<leader>ww", ':lua require("kiwi").open_wiki_index()<cr>', desc = "Open Wiki index" },
-      { "<leader>wl", ':lua require("kiwi").open_wiki_index("local")<cr>', desc = "Open Wiki index" },
-      { "<leader>T", ':lua require("kiwi").todo.toggle()<cr>', desc = "Toggle Markdown Task" },
+      { "<leader>ww", ":lua require(\"kiwi\").open_wiki_index()<CR>", desc = "Open Wiki index" },
+      { "<leader>wl", ":lua require(\"kiwi\").open_wiki_index(\"local\")<CR>", desc = "Open Wiki index" },
+      { "<leader>wT", ":lua require(\"kiwi\").todo.toggle()<CR>", desc = "Toggle Markdown Task" },
     },
   },
   {
