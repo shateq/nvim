@@ -1,4 +1,14 @@
 return {
-  { "numToStr/Comment.nvim" },
-  { "norcalli/nvim-colorizer.lua" },
+  "neovim/nvim-lspconfig",
+  config = function()
+    vim.lsp.enable("clangd", "tinymist")
+
+    vim.lsp.config["tinymist"] = {
+      cmd = { "tinymist" },
+      filetypes = { "typst" },
+      settings = {
+        formatterMode = "typstyle",
+      },
+    }
+  end,
 }

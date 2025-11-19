@@ -9,7 +9,7 @@ return {
       },
       {
         name = "local",
-        path = "~/Documents/Wiki",
+        path = vim.fn.expand "$HOME/Documents/Notes",
       },
     },
     keys = {
@@ -20,9 +20,18 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
-	lazy = true,
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     ft = { "markdown" },
     opts = {},
+  },
+  {
+    -- provides tinymist
+    "chomosuke/typst-preview.nvim",
+    ft = "typst",
+    version = "*",
+    opts = {},
+    keys = {
+      { "<leader>tpt", ":TypstPreviewToggle", desc = "Toggle typst file preview" },
+    },
   },
 }

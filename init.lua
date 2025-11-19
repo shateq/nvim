@@ -23,7 +23,6 @@ o.termguicolors = true
 
 o.lazyredraw = true
 o.synmaxcol = 300
-o.timeoutlen = 500
 o.cursorline = true -- highlight line
 o.showmode = false -- false if there's status bar 
 -- Undo file
