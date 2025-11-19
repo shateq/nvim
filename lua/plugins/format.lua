@@ -13,6 +13,7 @@ return {
       markdown = { "deno_fmt" },
       rust = { "rustfmt" },
       css = { "stylelint" },
+      html = { "superhtml" }
     },
   },
   keys = {

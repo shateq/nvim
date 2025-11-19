@@ -35,10 +35,6 @@ map("n", "<C-h>", "<C-w><C-h>")
 map("n", "<C-l>", "<C-w><C-l>")
 map("n", "<C-j>", "<C-w><C-j>")
 map("n", "<C-k>", "<C-w><C-k>")
-map("n", "<F5>", "<cmd>resize +2<CR>")
-map("n", "<F6>", "<cmd>resize -2<CR>")
-map("n", "<F7>", "<cmd>vertical resize +2<CR>")
-map("n", "<F8>", "<cmd>vertical resize -2<CR>")
 
 -- toggle switches
 map("n", "<leader>tc", function()
