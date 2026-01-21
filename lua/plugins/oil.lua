@@ -2,7 +2,7 @@ return {
   {
     "jiaoshijie/undotree",
     keys = {
-      { "<leader>pu", "<cmd>lua require('undotree').toggle()<cr>" },
+      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
     },
   },
   {
@@ -16,8 +16,8 @@ return {
         show_hidden = true,
       },
     },
-  },
-  keys = {
-    { "<leader>pv", "<cmd>Oil<CR>", desc = "Open parent directory" },
+    keys = {
+      { "<leader>;", "<cmd>Oil<CR>", desc = "Open parent directory" },
+    },
   },
 }
