@@ -18,5 +18,5 @@ return {
     -- (Default) Only show the documentation popup when manually triggered
     completion = { documentation = { auto_show = false } },
   },
-  opts_extend = { "sources.default" }
+  opts_extend = { "sources.default" },
 }
