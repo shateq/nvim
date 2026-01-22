@@ -3,7 +3,7 @@ vim.g.mapleader = ","
 local o = vim.o
 
 o.guicursor = "" -- i desperately need this one
-o.clipboard = "unnamedplus" -- system clipboard
+o.clipboard = "unnamed,unnamedplus" -- sync system clipboard
 o.history = 100
 o.nu = true
 o.relativenumber = true
@@ -24,7 +24,7 @@ o.termguicolors = true
 o.lazyredraw = true
 o.synmaxcol = 300
 o.cursorline = true -- highlight line
-o.showmode = false -- false if there's status bar 
+o.showmode = true -- false if there's status bar
 -- Undo file
 o.undofile = true
 o.undodir = os.getenv "XDG_CACHE_HOME" .. "/vim/undodir"
@@ -39,4 +39,3 @@ o.smartcase = true
 require "config.lazy"
 require "config.keymap"
 require "config.autocmd"
-
