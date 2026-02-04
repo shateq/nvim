@@ -4,25 +4,22 @@ return {
     "saghen/blink.cmp",
   },
   config = function()
-    -- local capabilities = require('blink.cmp').get_lsp_capabilities()
-
     vim.lsp.config["tinymist"] = {
-      cmd = { "tinymist" },
-      filetypes = { "typst" },
-      settings = {
-        formatterMode = "typstyle",
+      cmd = {
+        -- TODO: move to dedicated typst plugin file
+        -- typst preview downloaded path
+        vim.fn.expand("$XDG_DATA_HOME/nvim/typst-preview/tinymist*")
       },
     }
 
+    -- capabilities
+    vim.lsp.config("*", {
+      capabilities = require('blink.cmp').get_lsp_capabilities(),
+    })
+
     vim.lsp.enable "lua_ls"
-    vim.lsp.enable("clangd", "tinymist")
+    vim.lsp.enable "tinymist"
+    vim.lsp.enable "clangd"
+    -- vim.lsp.enable "hls"
   end,
 }
-
--- formatters_by_ft = {
---   bash = { "beautysh" },
---   c = { "clang-format" },
---   json = { "jq" },
---   javascript = { "deno_fmt" },
---   markdown = { "deno_fmt" },
---   rust = { "rustfmt" },

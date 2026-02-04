@@ -4,7 +4,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   keys = {
     { "<C-f>", "<cmd>Telescope find_files<CR>", desc = "List current working directory" },
-    { "<C-p>", "<cmd>Telescope git_files<CR>", desc = "List git repo files" },
+    { "<leader><C-p>", "<cmd>Telescope git_files<CR>", desc = "List git repo files" },
     { "<leader>fr", "<cmd>Telescope registers<CR>", desc = "Pull registers" },
     { "<leader>f?", "<cmd>Telescope keymaps<CR>", desc = "List keymaps" },
     { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Browse help pages" },
