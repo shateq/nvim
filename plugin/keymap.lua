@@ -3,11 +3,13 @@ local function map(m, k, v)
   vim.keymap.set(m, k, v, { noremap = true, silent = true })
 end
 
+map("n", "<space><space>x", "<cmd>source %<CR>")
+map("n", "<space>x", ":.lua<CR>")
+
 --map("n", "<leader>g", "vi<yf>a</>PT>i")
 map("n", "<leader>h", "<cmd>noh<CR>")
-map("n", "<leader>f", "<cmd>find ") -- execute current file
+map("n", "<leader>f", "<cmd>find ")
 map("n", "<leader>s", "<cmd>%s/foo/bar/g<Left><Left>") --replace all
-map("n", "<leader>%", "<cmd>source %<CR>")
 
 -- [T]oggle line numbers
 map("n", "<leader>Tr", "<cmd>set relativenumber!<CR>")
@@ -36,3 +38,6 @@ map("n", "ZW", "<cmd>tabclose<CR>")
 -- gt, gT
 map("n", "<M-h>", "<cmd>tabprevious<CR>")
 map("n", "<M-l>", "<cmd>tabnext<CR>")
+
+-- vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
+-- vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")

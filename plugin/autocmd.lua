@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("FileType", {
   group = "bufcheck",
   pattern = "*",
   callback = function()
-    vim.opt_local.formatoptions:remove { "c", "r", "o" }
+    vim.opt_local.formatoptions:remove { "c", "o" }
   end,
 })
 
