@@ -19,11 +19,24 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = "bufcheck",
-  pattern = "*",
+
+-- Format the current buffer on save
+-- help from lsp.txt copied over
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("my.lsp", {}),
   callback = function(args)
-    require("conform").format { bufnr = args.buf }
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client then return end
+
+    if client:supports_method('textDocument/formatting') then
+      -- if vim.bo.filetype == "lua" then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = args.buf,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+        end,
+      })
+    end
   end,
 })
 
