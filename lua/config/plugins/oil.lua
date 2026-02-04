@@ -1,11 +1,5 @@
 return {
   {
-    "jiaoshijie/undotree",
-    keys = {
-      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
-    },
-  },
-  {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
