@@ -11,10 +11,15 @@ map("n", "<leader>bl", function() vim.lsp.buf.format() end, { desc = "Format buf
 
 --map("n", "<leader>g", "vi<yf>a</>PT>i")
 map("n", "<leader>h", "<cmd>noh<CR>")
-map("n", "<leader>f", "<cmd>find ")
-map("n", "<leader>s", "<cmd>%s/foo/bar/g<Left><Left>") --replace all
+-- map("n", "<leader>f", "<cmd>find ")
+map("n", "<leader>s", ":%s/foo/bar/g<Left><Left>") --replace all
+-- open with systems default handler
+map("n", "<leader>O", function()
+  vim.ui.open(vim.fn.expand("%"))
+end)
 
--- [T]oggle line numbers
+-- [T]oggle anything
+map("n", "<leader>TM", "<cmd>set modifiable!<CR>")
 map("n", "<leader>Tr", "<cmd>set relativenumber!<CR>")
 map("n", "<leader>Tn", "<cmd>set nu!<CR>")
 map("n", "<leader>T0", "<cmd>set nonu! nornu!<CR>")
@@ -32,8 +37,8 @@ map("t", "<esc><esc>", "<c-\\><c-n>")
 -- EDITOR
 map("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move line down" })
 map("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move line up" })
-map("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
-map("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+map("n", "<leader>n", "<cmd>bnext<CR>", { desc = "Next buffer" })
+map("n", "<leader>p", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 -- TABS
 map("n", "<leader>T", "<cmd>tabs<CR>")
 map("n", "<leader><C-t>", "<cmd>tabnew<CR>")
