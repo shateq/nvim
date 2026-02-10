@@ -2,7 +2,7 @@ return {
   {
     "stevearc/oil.nvim",
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
-    dependencies = { "nvim-mini/mini.icons" },
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     lazy = false,
     opts = {
       default_file_explorer = true,
