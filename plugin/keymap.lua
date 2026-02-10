@@ -6,9 +6,6 @@ end
 map("n", "<space><space>x", "<cmd>source %<CR>")
 map("n", "<space>x", ":.lua<CR>")
 
--- LSP
-map("n", "<leader>bl", function() vim.lsp.buf.format() end, { desc = "Format buffer" })
-
 --map("n", "<leader>g", "vi<yf>a</>PT>i")
 map("n", "<leader>h", "<cmd>noh<CR>")
 -- map("n", "<leader>f", "<cmd>find ")

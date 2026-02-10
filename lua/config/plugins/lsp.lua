@@ -1,9 +1,16 @@
 return {
   "neovim/nvim-lspconfig",
+  lazy = false,
   dependencies = {
     "saghen/blink.cmp",
   },
+  keys = {
+    { "<leader>gf", vim.lsp.buf.format,     desc = "Format buffer" },
+    { "<leader>gd", vim.lsp.buf.definition, desc = "Format buffer" },
+  },
   config = function()
+    vim.diagnostic.config({ virtual_text = true })
+
     vim.lsp.config["tinymist"] = {
       cmd = {
         -- TODO: move to dedicated typst plugin file

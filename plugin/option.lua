@@ -1,7 +1,8 @@
 local o = vim.opt
+o.shadafile = "NONE"
 
 -- Preferences
-o.guicursor = "" -- i desperately need this one
+o.guicursor = ""
 o.clipboard = "unnamed,unnamedplus" -- sync system clipboard
 o.history = 100
 o.nu = true
@@ -24,7 +25,7 @@ o.termguicolors = true
 o.lazyredraw = true
 o.synmaxcol = 300
 o.cursorline = true -- highlight line
-o.showmode = true -- false if there's status bar
+o.showmode = true   -- false if there's status bar
 
 -- Undo file
 o.undofile = true
