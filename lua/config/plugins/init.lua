@@ -1,39 +1,8 @@
 return {
+  { "tpope/vim-fugitive", },
   {
-    "echasnovski/mini.nvim",
-    enabled = false,
-    config = function()
-      local statusline = require "mini.statusline"
-      statusline.setup { use_icons = true }
-    end,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    enabled = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      always_show_tabline = false,
-      sections = {
-        --lualine_x = {"filetype","encoding"},
-        lualine_x = { "searchcount" },
-        lualine_y = {},
-        lualine_z = { "location" },
-      },
-      tabline = {
-        lualine_b = {
-          {
-            "tabs",
-            mode = 1,
-            max_length = vim.o.columns * 0.6,
-            section_separators = { left = "", right = "" },
-            cond = function()
-              return vim.fn.tabpagenr "$" > 1
-            end,
-          },
-        },
-        lualine_y = { "filetype", "encoding" },
-      },
-    },
+    "dimtion/guttermarks.nvim",
+    -- enabled = false,
   },
   {
     "navarasu/onedark.nvim",
@@ -51,5 +20,12 @@ return {
     keys = {
       { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
     },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    -- dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.icons" }, -- if you use standalone mini plugins
+    ft = { "markdown" },
+    opts = {},
   },
 }
