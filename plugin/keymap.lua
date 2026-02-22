@@ -1,25 +1,43 @@
 --[[  KEYMAP  --]]
-local function map(m, k, v)
-  vim.keymap.set(m, k, v, { noremap = true, silent = true })
-end
+local map = vim.keymap.set
 
-map("n", "<space><space>x", "<cmd>source %<CR>")
-map("n", "<space>x", ":.lua<CR>")
+map("n", "q:", "<nop>")
+map({ "n" }, "<C-q>", "<cmd>copen<CR>", { silent = true })
+map("n", "<localleader><localleader>x", "<cmd>source %<CR>")
 
---map("n", "<leader>g", "vi<yf>a</>PT>i")
-map("n", "<leader>h", "<cmd>noh<CR>")
--- map("n", "<leader>f", "<cmd>find ")
-map("n", "<leader>s", ":%s/foo/bar/g<Left><Left>") --replace all
--- open with systems default handler
-map("n", "<leader>O", function()
+map("n", "<localleader>W", "<cmd>update<CR>")
+map("n", "<localleader>h", "<cmd>noh<CR>")
+map({ "n", "v" }, "<localleader>n", ":norm")
+map("n", "<localleader>s", ":%s/") --replace all
+
+map("n", "<leader>O", "<cmd>Open .<CR>", { desc = "Open current directory in file manager" })
+map("n", "<leader>o", function()
   vim.ui.open(vim.fn.expand("%"))
-end)
+end, { desc = "Open link with MIME handler" })
 
 -- [T]oggle anything
 map("n", "<leader>TM", "<cmd>set modifiable!<CR>")
 map("n", "<leader>Tr", "<cmd>set relativenumber!<CR>")
 map("n", "<leader>Tn", "<cmd>set nu!<CR>")
 map("n", "<leader>T0", "<cmd>set nonu! nornu!<CR>")
+
+-- EDITOR
+map("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move line down" })
+map("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move line up" })
+map("n", "<leader>n", "<cmd>bnext<CR>", { desc = "Next buffer" })
+map("n", "<leader>p", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+
+-- TABS
+map("n", "<leader>T", "<cmd>tabs<CR>")
+map("n", "<leader><C-t>", "<cmd>tabnew<CR>")
+map("n", "ZW", "<cmd>tabclose<CR>")
+-- gt, gT
+-- map("n", "<M-h>", "<cmd>tabprevious<CR>")
+-- map("n", "<M-l>", "<cmd>tabnext<CR>")
+
+-- [c]uickFix
+vim.keymap.set("n", "<M-h>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<M-l>", "<cmd>cprev<CR>")
 
 -- TERMINAL
 map("n", "<leader>:", function()
@@ -29,20 +47,5 @@ map("n", "<leader>:", function()
   vim.api.nvim_win_set_height(0, 6)
 end)
 map("t", "<esc><esc>", "<c-\\><c-n>")
---map("n", "<leader>pv", vim.cmd.Ex)
 
--- EDITOR
-map("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move line down" })
-map("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move line up" })
-map("n", "<leader>n", "<cmd>bnext<CR>", { desc = "Next buffer" })
-map("n", "<leader>p", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
--- TABS
-map("n", "<leader>T", "<cmd>tabs<CR>")
-map("n", "<leader><C-t>", "<cmd>tabnew<CR>")
-map("n", "ZW", "<cmd>tabclose<CR>")
--- gt, gT
-map("n", "<M-h>", "<cmd>tabprevious<CR>")
-map("n", "<M-l>", "<cmd>tabnext<CR>")
-
--- vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
--- vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+--map("n", "<leader>g", "vi<yf>a</>PT>i")

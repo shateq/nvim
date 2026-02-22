@@ -26,6 +26,7 @@ o.lazyredraw = true
 o.synmaxcol = 300
 o.cursorline = true -- highlight line
 o.showmode = true   -- false if there's status bar
+o.timeoutlen = 400
 
 -- Undo file
 o.undofile = true
