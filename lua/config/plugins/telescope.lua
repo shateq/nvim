@@ -24,7 +24,7 @@ return {
     { "<C-f>",      "<cmd>Telescope find_files<CR>", desc = "List current working directory" },
     { "<leader>ff", "<cmd>Telescope live_grep<CR>",  desc = "Telescope live grep" },
     { "<leader>fr", "<cmd>Telescope registers<CR>",  desc = "Pull registers" },
-    { "<leader>fb", "<cmd>Telescope buffers<CR>",    desc = "Telescope buffers" },
+    { "<C-b>",      "<cmd>Telescope buffers<CR>",    desc = "Telescope buffers" },
 
     { "<leader>fg", "<cmd>Telescope ghq<CR>",        desc = "ghq extension" },
     { "<leader>f?", "<cmd>Telescope keymaps<CR>",    desc = "List keymaps" },
