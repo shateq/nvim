@@ -1,8 +1,11 @@
 return {
+  -- {
+  --   "saghen/blink.indent",
+  --   opts = { static = { char = "│" }, scope = { char = "│" } },
+  -- },
   { "tpope/vim-fugitive", },
   {
     "dimtion/guttermarks.nvim",
-    -- enabled = false,
   },
   {
     "navarasu/onedark.nvim",
@@ -16,7 +19,6 @@ return {
   },
   {
     "jiaoshijie/undotree",
-    lazy = true,
     keys = {
       { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
     },
