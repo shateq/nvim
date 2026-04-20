@@ -1,7 +1,7 @@
 return function()
   -- path without ~ will be relative
   local LOC = {
-    "~/Documents/Notes/WAT/",
+    "~/Documents/Notes/",
     "~/Documents/WAT-LABY/",
     "~/Documents/Nextcloud/Notes/"
   }

@@ -2,14 +2,21 @@
 local map = vim.keymap.set
 
 map("n", "q:", "<nop>")
-map("n", "<localleader><localleader>x", "<cmd>source %<CR>")
 
+--open location
+map("n", "<leader>z", require("config.wiki"))
+
+--[[ SPACE --]]
+map("n", "<localleader><localleader>x", "<cmd>source %<CR>")
 map("n", "<localleader>W", "<cmd>update<CR>")
 map("n", "<localleader>h", "<cmd>noh<CR>")
 map("n", "<localleader>o", "o<Esc>")
 
 map({ "n", "v" }, "<localleader>n", ":norm")
 map("n", "<localleader>s", ":%s/") --replace all
+map("v", "<localleader>s", ":s/")
+-- MAKE
+map("n", "<localleader>m", ":!./%:r.out<CR>")
 
 --[c]ISUAL MODE TRICKS
 map("v", "<localleader>cn", ":!nl -w1 -s'. '<CR>")
@@ -21,8 +28,6 @@ map({ "n", "v" }, "<localleader>cd", "<cmd>r!date +'%Y-%m-%d %a %H:%M'<CR>")
 --html pairs
 map("n", "<localleader>g", "vi<yf>a</>PT>i")
 
---open location
-map("n", "<leader>z", require("config.wiki"))
 
 -- [c]uickFix
 map({ "n" }, "<C-q>", "<cmd>copen<CR>", { silent = true })
@@ -49,10 +54,10 @@ map("n", "<leader>p", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 -- TABS
 map("n", "<leader>T", "<cmd>tabs<CR>")
 map("n", "<leader><C-t>", "<cmd>tabnew<CR>")
-map("n", "ZW", "<cmd>tabclose<CR>")
+map("n", "<leader><C-w>", "<cmd>tabclose<CR>")
 -- gt, gT
--- map("n", "<M-h>", "<cmd>tabprevious<CR>")
--- map("n", "<M-l>", "<cmd>tabnext<CR>")
+map("n", "<M-h>", "<cmd>tabprevious<CR>")
+map("n", "<M-l>", "<cmd>tabnext<CR>")
 
 -- TERMINAL
 map("n", "<leader>:", function()
